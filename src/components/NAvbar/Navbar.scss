@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,600;0,700;1,600&family=Inter:wght@500;600;700;900&family=Montserrat:ital,wght@0,500;1,500&family=Outfit:wght@500;600;900&family=Playfair+Display&family=Poppins:ital,wght@0,200;0,300;1,400&family=Righteous&family=Roboto&family=Rubik&display=swap");
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    height: 40px;
+  }
+  svg{
+    margin-left: 2rem;
+  }
+  .all-animals {
+    display: flex;
+    margin-right: 2rem;
+    align-items: center;
+
+    button {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      font-family: "Roboto", sans-serif;
+      height: 30px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-right: 1rem;
+    }
+    h4 {
+      font-family: "Roboto", sans-serif;
+      color: var(--primary-color);
+    }
+  }
+}

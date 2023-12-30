@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,600;0,700;1,600&family=Inter:wght@500;600;700;900&family=Montserrat:ital,wght@0,500;1,500&family=Outfit:wght@500;600;900&family=Playfair+Display&family=Poppins:ital,wght@0,200;0,300;1,400&family=Righteous&family=Roboto&family=Rubik&display=swap");
+
+.home {
+  height: calc(100vh - 40px);
+  position: relative;
+
+  .sunbg {
+    height: calc(50vh - 20px);
+    overflow: hidden;
+    position: relative;
+
+    .sun {
+      background-color: rgb(255, 136, 24);
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -140px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      filter: blur(1px);
+    }
+    .shadow {
+      background-color: rgb(92, 56, 22);
+      height: 270px;
+      width: 360px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(20px);
+    }
+  }
+
+  .glarebg {
+    height: calc(50vh - 20px);
+    overflow: hidden;
+    position: relative;
+    
+    .glare {
+      width: 250px;
+      height: 200px;
+      background-color: rgb(126, 70, 18);
+      position: absolute;
+      left: 50%;
+      top: -50px;
+      transform: translateX(-50%);
+    filter: blur(30px);
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    }
+  }
+
+  img{
+    position: absolute;
+    top: -100px;
+    right: 20%;
+    z-index: 4;
+    // height: 80%;
+  }
+  .texts{
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    color: var(--primary-color);
+    font-size: 5vh;
+    width: 40%;
+
+    p{
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+  }
+  .notes{
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    color: rgb(165, 163, 163);
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+
+    hr{
+        margin: .5rem;
+    }
+}
+ 
+}

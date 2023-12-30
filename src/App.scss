@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,600;0,700;1,600&family=Inter:wght@500;600;700;900&family=Montserrat:ital,wght@0,500;1,500&family=Outfit:wght@500;600;900&family=Playfair+Display&family=Poppins:ital,wght@0,200;0,300;1,400&family=Righteous&family=Rubik&display=swap');
+
 *{
   box-sizing: border-box;
   padding: 0;
@@ -12,4 +14,25 @@ html{
 }
 body{
   background-color: rgb(15,15,15);
+  font-family: 'Playfair Display', serif;
 }
+
+
+@mixin mobile {
+  @media (max-width: 738px) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 739px) and (max-width: 1024px) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) and (max-width: 1366px) {
+      @content;
+  }
+}
+
