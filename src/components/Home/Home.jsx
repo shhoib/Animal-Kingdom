@@ -8,22 +8,18 @@ const Home = () => {
   const sunControls = useAnimation();
 
   const handleNextClick = () => {
-    console.log(Index);
     controls.start({ scale: 2, opacity: 0, x: "150px" });
-    sunControls.start({ scale: 18, opacity: 0 });
+    sunControls.start({ scale: 180,opacity:1});
     setTimeout(() => {
       setIndex((prevIndex) => (prevIndex + 1) % 3);
-      sunControls.start({ scale: 1, opacity: 1 , x:'-120px'});
+      sunControls.start({ scale: 1 ,opacity:0});
     }, 1500);
   };
-  console.log(Index);
 
   return (
     <div className="home">
       <div className="sunbg">
-        <motion.div
-          animate={sunControls} transition={{duration:2}} className="sun"
-        ></motion.div>
+        <motion.div className="sun"></motion.div>
         <motion.div
           initial={{ opacity: 0 }}  animate={{ opacity: 0.8 }}  transition={{ duration: 8 }} className="shadow"
         ></motion.div>
@@ -33,6 +29,7 @@ const Home = () => {
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 8 }} className="glare"
         ></motion.div>
       </div>
+      <motion.div initial={{opacity:0}} animate={sunControls} transition={{duration:2}} className="animation-circle"></motion.div>
 
       {Index == 0 && (
         <motion.img
@@ -41,11 +38,14 @@ const Home = () => {
       )}
 
       {Index == 1 && (
-      <img className="deerImg" src="deer1.png" alt="" />
+      <motion.img
+      animate={controls} initial={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 2 }}
+       className="deerImg" src="deer1.png" alt="" />
       )}
 
       {Index == 2 && (
-      <img className='birdImg' src="bird1.png" alt="" />
+      <motion.img animate={controls} initial={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 2 }}
+       className='birdImg' src="bird1.png" alt="" />
       )}
 
       <div className="texts">

@@ -1,13 +1,18 @@
-.test{
-    height: 100vh;
-}
-.first{
-    width: 200px;
+.sunn{
     height: 200px;
+    width: 200px;
     background-color: red;
 }
-.second{
-    width: 200px;
+.sunn::before{
+    content: '';
     height: 200px;
-    background-color: green;
+    width: 200px;
+    background-color: orange;
+    position: absolute;
+    left: 5%;
+    top: 100px;
+}
+.test{
+    height: 100vh;
+    position: relative;
 }
