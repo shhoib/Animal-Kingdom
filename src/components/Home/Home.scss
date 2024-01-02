@@ -69,9 +69,10 @@
   .deerImg{
     position: absolute;
     top: 7%;
-    right: 25%;
+    right: 22%;
     z-index: 4;
     height: 80%;
+    filter: brightness(90%) opacity(.9);
   }
   .birdImg{
     position: absolute;
@@ -83,15 +84,20 @@
   .texts{
     position: absolute;
     top: 20%;
-    left: 7%;
+    left: 15%;
     color: var(--primary-color);
     font-size: 5vh;
-    width: 40%;
+    width: 20%;
+
+    h1{
+      line-height: 3.8rem;
+    }
 
     p{
         font-size: 13px;
-        margin-top: 10px;
+        margin-top: 25px;
         font-family: "Roboto", sans-serif;
+        line-height: 20px;
     }
 
   }
@@ -139,5 +145,71 @@
   top: 49%;
   left: 49%;
   overflow: visible;
+}
+
+.leaf1{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  height: 100px;
+  transform: rotate(-20deg);
+  filter: opacity(.5);
+}
+.leaf2{
+  position: absolute;
+  top: 37%;
+  left: 41%;
+  transform: scaleX(-1);
+  height: 100px;
+  filter: brightness(15%) blur(1px);
+  z-index: 8;
+}
+.leaf3{
+  position: absolute;
+  top: 70%;
+  left: -3%;
+  transform: scaleX(-1);
+  height: 100px;
+  filter: blur(3px);
+  height: 25vh;
+  transform: rotate(15deg);
+}
+.leaf4{
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: scaleX(-1);
+  filter: blur(2px);
+  height: 10vh;
+  transform: rotate(15deg);
+}
+.leaf5{
+  position: absolute;
+  top: 63%;
+  right: 25%;
+  height: 100px;
+  filter: blur(0.7px);
+  height: 25vh;
+  transform: rotate(-55deg);
+  z-index: 10;
+}
+.leaf6{
+  position: absolute;
+  top: 55%;
+  right: 13%;
+  height: 100px;
+  height: 15vh;
+  transform: rotate(55deg);
+  z-index: -1;
+}
+.leaf7{
+  position: absolute;
+  top: 55%;
+  right: -5%;
+  height: 100px;
+  height: 25vh;
+  transform: rotate(-55deg);
+  z-index: -1;
+  filter: blur(3px);
 }
 }

@@ -19,7 +19,7 @@ const Home = () => {
     },1000)
     setTimeout(() => {
       setIndex((prevIndex) => (prevIndex + 1) % 3);
-    }, 1800);
+    }, 1400);
   };
 
   const data = [
@@ -47,9 +47,9 @@ const Home = () => {
     <div className="home">
       <div className="sunbg">
         <motion.div className="sun" style={{backgroundColor: data[Index].sunColor}} transition={{delay:5}}></motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}  animate={{ opacity: 0.8 }}  transition={{ duration: 8 }} className="shadow"
-        ></motion.div>
+        ></motion.div> */}
       </div>
       <div className="glarebg">
         <motion.div
@@ -58,38 +58,73 @@ const Home = () => {
       </div>
       <motion.div initial={{opacity:0}} animate={sunControls}  transition={{duration:.9,delay:.5}} className="animation-circle" style={{border: `1px solid ${data[Index].sunColor}` }}></motion.div>
 
+
+      {/* ///////////////////images/////////// */}
       {Index == 0 && (
         <motion.img
-          animate={controls} initial={{scale: 1,opacity:0 }} whileInView={{opacity:1}} exit={{ opacity: 0 }} transition={{ duration: .9,ease:"backIn" }}
+          animate={controls} initial={{scale: 2,opacity:0,x:'230px' }} whileInView={{opacity:1,x:0,scale:1}} exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }}
           className="elephantImg" src="africanElephant.png" alt="" />
       )}
 
       {Index == 1 && (
       <motion.img
-      animate={controls} initial={{  scale: 1,opacity:0 }} whileInView={{opacity:1}} exit={{ opacity: 0 }} transition={{ duration: .9,ease:"backIn" }}
+      animate={controls} initial={{  scale: 2,opacity:0,x:'230px' }} whileInView={{opacity:1,x:0,scale:1}} exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }}
        className="deerImg" src="deer1.png" alt="" />
       )}
-
       {Index == 2 && (
-      <motion.img animate={controls} initial={{  scale: 1,opacity:0 }} whileInView={{opacity:1}} exit={{ opacity: 0 }} transition={{ duration: .9,ease:"backIn" }}
+      <motion.img animate={controls} initial={{  scale:2,opacity:0,x:'230px' }} whileInView={{opacity:1,x:0,scale:1}} exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }}
        className='birdImg' src="bird2.png" alt="" />
       )}
 
-      <div className="texts">
-        <motion.h1 key={data[Index].text} animate={textControls} whileInView={{opacity:1}} initial={{scale: 1,opacity:0}}  exit={{ opacity: 0 }} transition={{ duration: .9,ease:"backIn" }}>
+      <motion.div className="texts" animate={textControls} initial={{scale: 2,opacity:0,x:'-300px'}} whileInView={{opacity:1,x:0,scale:1}} 
+       exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }} key={data[Index].text}>
+        <motion.h1  >
           {data[Index].text}
         </motion.h1>
-        <motion.p animate={textControls} initial={{scale: 1,opacity:0}} whileInView={{opacity:1}}  exit={{ opacity: 0 }} transition={{ duration: .9,ease:"backIn" }}>
+        <motion.p >
         {data[Index].details}
         </motion.p>
-      </div>
+      </motion.div>
       <div className="notes">
         <p>{data[Index].name}</p>
         <hr />
         <p>species left {data[Index].left}</p>
+        <hr />
+        
       </div>
-      <img className="fog" src="fog4.png" alt="" />
-      {/* <motion.img initial={{x:0}} animate={{x:'200%', opacity:1}} transition={{duration:100, repeat:Infinity}} className="fog2" src="fog5.png" alt=""  /> */}
+
+      {/* /////////////obstracles////////////// */}
+      {Index == 0 && (
+      <motion.img className="fog" animate={controls} initial={{scale: 2,opacity:0,x:'230px' }} whileInView={{opacity:1,x:0,scale:1}} exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }} src="fog4.png" alt="" />
+      )}
+      {Index == 0 && (
+        <motion.img initial={{x:0}} animate={{x:'200%', opacity:1}} transition={{duration:100, repeat:Infinity}} className="fog2" src="fog5.png" alt=""  />
+      )}
+
+
+      {Index ==1 &&(
+        <motion.img className="leaf1" src="leaf1.png" alt="" />
+      )}
+      {Index ==1 &&(
+        <motion.img className="leaf2" src="leaf1.png" alt="" />
+      )}
+      {Index ==1 &&(
+        <motion.img className="leaf3" src="leaf2.png" alt="" />
+      )}
+      {Index ==1 &&(
+        <motion.img className="leaf4" src="fallingleaf2.png" alt="" />
+      )}
+      {Index ==1 &&(
+        <motion.img className="leaf5" src="leaf1.png" alt="" />
+      )}
+      {Index ==1 &&(
+        <motion.img className="leaf6" src="leaf2.png" alt="" />
+      )}
+      {Index ==1 &&(
+        <motion.img className="leaf7" src="fallingleaf2.png" alt="" />
+      )}
+
+
       <button onClick={handleNextClick}>next</button>
     </div>
   );
