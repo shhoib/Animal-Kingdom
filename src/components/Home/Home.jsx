@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Home.scss";
 import { motion, useAnimation } from "framer-motion";
+import SwipeButton from "../button/Button";
 
 const Home = () => {
   const [Index, setIndex] = useState(0);
@@ -9,6 +10,7 @@ const Home = () => {
   const textControls = useAnimation();
 
   const handleNextClick = () => {
+    console.log('uky');
     controls.start({ scale: 2, opacity: 0, x: "500px" });
     textControls.start({ x: "-900px", scale:2 });
     sunControls.start({ scale: 250,opacity:1});
@@ -47,9 +49,7 @@ const Home = () => {
     <div className="home">
       <div className="sunbg">
         <motion.div className="sun" style={{backgroundColor: data[Index].sunColor}} transition={{delay:5}}></motion.div>
-        {/* <motion.div
-          initial={{ opacity: 0 }}  animate={{ opacity: 0.8 }}  transition={{ duration: 8 }} className="shadow"
-        ></motion.div> */}
+  
       </div>
       <div className="glarebg">
         <motion.div
@@ -68,7 +68,7 @@ const Home = () => {
 
       {Index == 1 && (
       <motion.img
-      animate={controls} initial={{  scale: 2,opacity:0,x:'230px' }} whileInView={{opacity:1,x:0,scale:1}} exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }}
+      animate={controls} initial={{  scale: 2,opacity:0,x:'230px' }} whileInView={{opacity:1,x: 0,scale:1}} exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }}
        className="deerImg" src="deer1.png" alt="" />
       )}
       {Index == 2 && (
@@ -103,29 +103,28 @@ const Home = () => {
 
 
       {Index ==1 &&(
-        <motion.img className="leaf1" src="leaf1.png" alt="" />
+        <motion.img className="leaf1" initial={{x:0}} animate={{x:'-50px', opacity:1}} transition={{ duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="leaf1.png" alt="" />
       )}
       {Index ==1 &&(
-        <motion.img className="leaf2" src="leaf1.png" alt="" />
+        <motion.img className="leaf2" initial={{x:0}} animate={{x:'-50px', opacity:1}} transition={{duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="leaf1.png" alt="" />
       )}
       {Index ==1 &&(
-        <motion.img className="leaf3" src="leaf2.png" alt="" />
+        <motion.img className="leaf3" initial={{x:0}} animate={{x:'-50px', opacity:1}} transition={{duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="leaf2.png" alt="" />
       )}
       {Index ==1 &&(
-        <motion.img className="leaf4" src="fallingleaf2.png" alt="" />
+        <motion.img className="leaf4" initial={{x:0}} animate={{x:'-50px', opacity:1}} transition={{duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="fallingleaf2.png" alt="" />
       )}
       {Index ==1 &&(
-        <motion.img className="leaf5" src="leaf1.png" alt="" />
+        <motion.img className="leaf5" initial={{x:0}} animate={{x:'50px', opacity:1}} transition={{duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="leaf1.png" alt="" />
       )}
       {Index ==1 &&(
-        <motion.img className="leaf6" src="leaf2.png" alt="" />
+        <motion.img className="leaf6" initial={{x:0}} animate={{x:'50px', opacity:1}} transition={{duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="leaf2.png" alt="" />
       )}
       {Index ==1 &&(
-        <motion.img className="leaf7" src="fallingleaf2.png" alt="" />
+        <motion.img className="leaf7" initial={{x:0}} animate={{x:'50px', opacity:1}} transition={{duration: 10, repeat: Infinity, repeatType: 'reverse'}} src="fallingleaf2.png" alt="" />
       )}
 
-
-      <button onClick={handleNextClick}>next</button>
+      <SwipeButton onClick={handleNextClick}/>
     </div>
   );
 };
