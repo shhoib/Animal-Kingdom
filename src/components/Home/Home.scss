@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,600;0,700;1,600&family=Inter:wght@500;600;700;900&family=Montserrat:ital,wght@0,500;1,500&family=Outfit:wght@500;600;900&family=Playfair+Display&family=Poppins:ital,wght@0,200;0,300;1,400&family=Righteous&family=Roboto&family=Rubik&display=swap");
+@import '../../App.scss';
 
 .home {
   height: calc(100vh - 40px);
@@ -21,6 +22,12 @@
       transform: translateX(-50%);
       z-index: 2;
       filter: blur(1px);
+
+      @include mobile{
+        height: 200px;
+        width: 200px;
+        bottom: -130px;
+      }
     }
     .shadow {
       background-color: rgb(92, 56, 22);
@@ -39,10 +46,10 @@
     height: calc(50vh - 20px);
     overflow: hidden;
     position: relative;
-    background-image: url('stage1.jpg');
+    background-image: url('https://i.pinimg.com/564x/a5/bb/65/a5bb65caa9cc3316d8fc0ca5853691f5.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    filter: opacity(0.2) blur(1px);
+    filter: opacity(0.1);
     
     .glare {
       width: 300px;
@@ -53,8 +60,6 @@
       top: -50px;
       transform: translateX(-50%);
     filter: blur(60px) ;
-    border-bottom-right-radius: 100%;
-    border-bottom-left-radius: 100%;
     }
 
   }
@@ -65,6 +70,12 @@
     right: 20%;
     z-index: 4;
     filter: brightness(90%);
+
+    @include mobile{
+      height: 350px;
+      top: 17%;
+      right: 5px;
+    }
   }
   .deerImg{
     position: absolute;
@@ -73,6 +84,12 @@
     z-index: 4;
     height: 80%;
     filter: brightness(90%) opacity(.9);
+
+    @include mobile{
+      height: 350px;
+      top: 17%;
+      right: 5px;
+    }
   }
   .birdImg{
     position: absolute;
@@ -80,6 +97,12 @@
     right: 10%;
     z-index: 4;
     height: 65%;
+
+    @include mobile{
+      height: 250px;
+      top: 28%;
+      right: -125px;
+    }
   }
   .texts{
     position: absolute;
@@ -89,8 +112,20 @@
     font-size: 5vh;
     width: 20%;
 
+    @include mobile{
+      width: 30%;
+      top: 30%;
+      left: 8%;
+      z-index: 5;
+    }
+
     h1{
       line-height: 3.8rem;
+      
+      @include mobile{
+        font-size: 3.2vh;
+        line-height: 2rem;
+      }
     }
 
     p{
@@ -98,6 +133,11 @@
         margin-top: 25px;
         font-family: "Roboto", sans-serif;
         line-height: 20px;
+
+        @include mobile{
+          font-size: 9px;
+          line-height: 15px;
+        }
     }
 
   }
@@ -109,6 +149,10 @@
     font-family: "Roboto", sans-serif;
     text-align: center;
 
+    @include mobile{
+      top: 65%;
+    }
+
     hr{
         margin: .5rem;
     }
@@ -119,6 +163,12 @@
   top: 39%;
   right: 17%;
   z-index: 5;
+
+  @include mobile{
+    height: 180px;
+    top: 47%;
+    right: 1%;
+  }
 }
  .fog2{
   height: 200px;
@@ -126,6 +176,10 @@
   top: 70%;
   left: 0;
   filter: opacity(0.1) brightness(90%);
+
+  @include mobile{
+    height: 170px;
+  }
  }
 
  .animation-circle{
@@ -140,6 +194,29 @@
   overflow: visible;
 }
 
+@keyframes rightLeaf {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes leftLeaf {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .leaf1{
   position: absolute;
   top: 5%;
@@ -147,6 +224,12 @@
   height: 100px;
   transform: rotate(-20deg);
   filter: opacity(.5);
+  animation: leftLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+  }
+
 }
 .leaf2{
   position: absolute;
@@ -156,6 +239,14 @@
   height: 100px;
   filter: brightness(15%) blur(1px);
   z-index: 8;
+  animation: leftLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+    left: 45%;
+    top: 42%;
+  }
+
 }
 .leaf3{
   position: absolute;
@@ -166,6 +257,13 @@
   filter: blur(3px);
   height: 25vh;
   transform: rotate(15deg);
+  animation: leftLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+    left: 0%;
+  }
+
 }
 .leaf4{
   position: absolute;
@@ -175,6 +273,12 @@
   filter: blur(2px);
   height: 10vh;
   transform: rotate(15deg);
+  animation: leftLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+    left: 35%;
+  }
 }
 .leaf5{
   position: absolute;
@@ -185,6 +289,12 @@
   height: 25vh;
   transform: rotate(-55deg);
   z-index: 10;
+  animation: rightLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+    right: 29%;
+  }
 }
 .leaf6{
   position: absolute;
@@ -194,6 +304,12 @@
   height: 15vh;
   transform: rotate(55deg);
   z-index: -1;
+  animation: rightLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+    right: 16%;
+  }
 }
 .leaf7{
   position: absolute;
@@ -204,5 +320,11 @@
   transform: rotate(-55deg);
   z-index: -1;
   filter: blur(3px);
+  animation: rightLeaf 30s infinite alternate;
+
+  @include mobile{
+    height: 50px;
+    right: 0%;
+  }
 }
 }

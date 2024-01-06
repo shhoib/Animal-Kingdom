@@ -1,3 +1,4 @@
+@import '../../App.scss';
 
 .button-container{
     position: absolute;
@@ -6,6 +7,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include mobile{
+            bottom: 100px;
+        }
+
     .swipe{
         
         height: 35px;
@@ -15,14 +21,28 @@
         width: 25px;
         z-index: 100;
     }
+
+    @keyframes upArrow {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
     .up-icon1{
         color: white;
         font-size: 20px;
         position: relative;
         top: 10px;
+        animation: upArrow 2s infinite ease-in-out;
     }
     .up-icon2{
         color: white;
         font-size: 20px;
+        animation: upArrow 2s infinite ease-in-out ;
     }
 }

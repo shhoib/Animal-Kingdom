@@ -3,15 +3,24 @@ import { IoIosArrowUp } from "react-icons/io";
 import {motion,useAnimation} from 'framer-motion'
 
 
-const SwipeButton = ({ onClick }) => {
+const SwipeButton = ({onClick}) => {
 
     const animateIcon = useAnimation();
+
+    const handleButtonClick=()=>{
+        animateIcon.start({y:'-150px'})
+        setTimeout(() => {
+            animateIcon.start({y:'0'})
+        }, 1500);
+        onClick();
+
+    }
     return(
 
         <div className='button-container'>
-            <motion.p initial={{scale:1,y:0}} animate={{scale:1.3,y:'-20px'}} transition={{duration:2,repeat:Infinity}}><IoIosArrowUp className='up-icon1' /></motion.p>
-            <motion.p initial={{scale:1,y:0}} animate={{scale:1.3,y:'-20px'}} transition={{duration:2,repeat:Infinity}}><IoIosArrowUp className='up-icon2' /></motion.p>
-            <button className='swipe' onClick={onClick}></button>
+            <motion.p animate={animateIcon} initial={{y:0}} transition={{duration:1}}><IoIosArrowUp className='up-icon1' /></motion.p>
+            <motion.p animate={animateIcon} initial={{y:0}} transition={{duration:1}}><IoIosArrowUp className='up-icon2' /></motion.p>
+            <button className='swipe' onClick={handleButtonClick}></button>
 
         </div>
     )
