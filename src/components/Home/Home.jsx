@@ -75,7 +75,7 @@ const Home = () => {
        className='birdImg' src="bird2.png" alt="" />
       )}
 
-      <motion.div className="texts" animate={textControls} initial={{scale: 2,opacity:0,x:'-300px'}} whileInView={{opacity:1,x:0,scale:1}} 
+      <motion.div className="texts" animate={textControls} initial={{scale: 2,opacity:0,x:0}} whileInView={{opacity:1,x:0,scale:1}} 
        exit={{ opacity: 0 }} transition={{ duration: .7,ease:"backIn" }} key={data[Index].text}>
         <motion.h1  >
           {data[Index].text}

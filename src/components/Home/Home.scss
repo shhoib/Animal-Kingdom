@@ -76,6 +76,10 @@
       top: 17%;
       right: 5px;
     }
+    @include tablet{
+      top: 8%;
+      right: 3%;
+    }
   }
   .deerImg{
     position: absolute;
@@ -90,6 +94,11 @@
       top: 17%;
       right: 5px;
     }
+    @include tablet{
+      height: 500px;
+      top: 20%;
+      right: 10%;
+    }
   }
   .birdImg{
     position: absolute;
@@ -103,6 +112,11 @@
       top: 28%;
       right: -125px;
     }
+    @include tablet{
+      height: 380px;
+      top: 30%;
+      right: -150px;
+    }
   }
   .texts{
     position: absolute;
@@ -111,12 +125,18 @@
     color: var(--primary-color);
     font-size: 5vh;
     width: 20%;
+    z-index: 5;
 
     @include mobile{
       width: 30%;
       top: 30%;
       left: 8%;
-      z-index: 5;
+      
+    }
+    @include tablet{
+      top: 32%;
+      left: 13%;
+      width: 30%;
     }
 
     h1{
@@ -125,6 +145,10 @@
       @include mobile{
         font-size: 3.2vh;
         line-height: 2rem;
+      }
+      @include tablet{
+        font-size: 5.5vh;
+        line-height: 3.6rem;
       }
     }
 
@@ -152,6 +176,10 @@
     @include mobile{
       top: 65%;
     }
+    @include tablet{
+      top: 75%;
+      right: 15%;
+    }
 
     hr{
         margin: .5rem;
@@ -167,6 +195,11 @@
   @include mobile{
     height: 180px;
     top: 47%;
+    right: 1%;
+  }
+  @include tablet{
+    height: 280px;
+    top: 49%;
     right: 1%;
   }
 }
@@ -229,6 +262,9 @@
   @include mobile{
     height: 50px;
   }
+  @include tablet{
+    height: 80px;
+  }
 
 }
 .leaf2{
@@ -245,6 +281,9 @@
     height: 50px;
     left: 45%;
     top: 42%;
+  }
+  @include tablet{
+    height: 80px;
   }
 
 }
@@ -263,6 +302,9 @@
     height: 50px;
     left: 0%;
   }
+  @include tablet{
+    height: 80px;
+  }
 
 }
 .leaf4{
@@ -278,6 +320,9 @@
   @include mobile{
     height: 50px;
     left: 35%;
+  }
+  @include tablet{
+    height: 80px;
   }
 }
 .leaf5{
@@ -295,6 +340,9 @@
     height: 50px;
     right: 29%;
   }
+  @include tablet{
+    height: 80px;
+  }
 }
 .leaf6{
   position: absolute;
@@ -309,6 +357,9 @@
   @include mobile{
     height: 50px;
     right: 16%;
+  }
+  @include tablet{
+    height: 80px;
   }
 }
 .leaf7{
@@ -325,6 +376,9 @@
   @include mobile{
     height: 50px;
     right: 0%;
+  }
+  @include tablet{
+    height: 80px;
   }
 }
 }

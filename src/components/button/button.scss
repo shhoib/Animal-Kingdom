@@ -11,6 +11,9 @@
         @include mobile{
             bottom: 100px;
         }
+        @include tablet{
+            bottom: 130px;
+        }
 
     .swipe{
         
