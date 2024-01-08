@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Navbar'
 
 function App() {
 
+  // all ok
+
   return (
     <>
       <Navbar/>
